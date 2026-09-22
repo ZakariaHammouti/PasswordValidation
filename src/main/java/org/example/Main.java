@@ -32,6 +32,8 @@ public class Main {
         System.out.println("Gib einen gültigen Passwort ein: ");
 
         String userPassword = sc.nextLine();
+
+
         //Passwords created in chatGPT and updated manually
        /* String[] passWordsvalid = {"Pass'''word1!", "Hallo1234!", "JavaTest1!", "Maven2026!", "GitHub123!",
                 "TestPass1!", "Abcdefg1!", "Zakaria12!", "Computer9!", "Programm1!",
@@ -80,7 +82,7 @@ public class Main {
         System.out.println("containsUpperAndLower: " + PasswordValidation.containsUpperAndLower(userPassword));
         System.out.println("isCommonPassword: " + PasswordValidation.isCommonPassword(userPassword));
         System.out.println("containsSpecialChar: " + PasswordValidation.containsSpecialChar(userPassword, ""));*/
-        System.out.println("##########");
+        //System.out.println("##########");
 
         /*for (int i = 0; i < passWordsInvalid.length; i++) {
 
@@ -92,7 +94,15 @@ public class Main {
                 System.out.println(passWordsInvalid[i]);
             }
         }*/
-        System.out.println("isValid: " + PasswordValidation.isValid(userPassword));
+        //System.out.println("isValid: " + PasswordValidation.isValid(userPassword));
+        if (PasswordValidation.isValid(userPassword))
+            System.out.println("Password is valid");
+        else
+            System.out.println("Password ist invalid");
+        //TODOs
+        //Grund anzeigen
+        //Password Vorschlagen
+
 
     }
 }
