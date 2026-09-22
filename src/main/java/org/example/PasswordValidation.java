@@ -16,6 +16,8 @@ public class PasswordValidation {
             return false;
         if (password.isBlank())
             return false;
+        if (password.length() > 100)
+            return false;
         return password.length() >= 8;
     }
 
@@ -167,7 +169,7 @@ public class PasswordValidation {
         listReason = new String[7];
 
         if (!hasMinLength(password)) {
-            listReason[0] = "Has not minimal length";
+            listReason[0] = "Has not minimal length or too much characters";
         }
 
         if (containsInvalidChar(password)) {
