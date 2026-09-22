@@ -45,7 +45,6 @@ public class PasswordValidation {
 
         for (int i = 0; i < password.length(); i++) {
             if (Character.isUpperCase(password.charAt(i))) {
-                //System.out.println("Gross gefunden");
                 containsUpper = true;
                 break;
             }
@@ -53,12 +52,10 @@ public class PasswordValidation {
 
         for (int i = 0; i < password.length(); i++) {
             if (Character.isLowerCase(password.charAt(i))) {
-                //System.out.println("Klein gefunden");
                 containsLower = true;
                 break;
             }
         }
-        //System.out.println("Upper:  " + containsUpper + " Lower: " + containsLower);
         return containsUpper && containsLower;
 
     }
@@ -83,7 +80,6 @@ public class PasswordValidation {
 
         for (int i = 0; i < password.length(); i++) {
             passwordItem = password.charAt(i);
-            //System.out.println(Character.isLetterOrDigit(passwordItem));
             if (!Character.isLetterOrDigit(passwordItem)) {
                 //found
                 return true;
@@ -98,7 +94,6 @@ public class PasswordValidation {
         int countSpecialChar = 0;
         for (int i = 0; i < password.length(); i++) {
             passwordItem = password.charAt(i);
-            //System.out.println(Character.isLetterOrDigit(passwordItem));
             if (!Character.isLetterOrDigit(passwordItem)) {
                 //found
                 countSpecialChar++;
