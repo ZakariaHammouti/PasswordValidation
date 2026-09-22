@@ -71,6 +71,6 @@ class PasswordValidationTest {
     //TDD Testcase
     @Test
     void isValid() {
-        assertTrue(PasswordValidation.isValid(""));
+        assertTrue(PasswordValidation.isValid("GültigerPassWort@34"));
     }
 }
