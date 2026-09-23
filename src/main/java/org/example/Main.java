@@ -15,9 +15,8 @@ public class Main {
         //Passwort-Gesamtlänge 100 Zeichen
         //Besondheiten:
 
-        //Nochc offen: Vorschläge und maximale länge eines Passworts bestimmen
-
-
+        //Nochc offen: Vorschläge eines passworts
+        
         System.out.println("Gib einen gültigen Passwort ein: ");
         String userPassword = sc.nextLine();
 
