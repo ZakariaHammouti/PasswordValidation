@@ -16,9 +16,11 @@ public class PasswordValidation {
             return false;
         if (password.isBlank())
             return false;
-        if (password.length() > 100)
-            return false;
         return password.length() >= 8;
+    }
+
+    public static boolean hasTooMuchCharacters(String password) {
+        return password.length() >= 100;
     }
 
     public static boolean containsInvalidChar(String password) {
@@ -111,7 +113,14 @@ public class PasswordValidation {
     public static boolean isValid(String password) {
         //Check if all Conditions are true
 
+
         if (!hasMinLength(password)) {
+            analyseReason(password);
+            showReason();
+            return false;
+        }
+
+        if (hasTooMuchCharacters(password)) {
             analyseReason(password);
             showReason();
             return false;
@@ -166,34 +175,38 @@ public class PasswordValidation {
     }
 
     public static String[] analyseReason(String password) {
-        listReason = new String[7];
+        listReason = new String[8];
 
         if (!hasMinLength(password)) {
-            listReason[0] = "Has not minimal length or too much characters";
+            listReason[0] = "Has not minimal length";
+        }
+
+        if (hasTooMuchCharacters(password)) {
+            listReason[1] = "Has too much characters";
         }
 
         if (containsInvalidChar(password)) {
-            listReason[1] = "contains invalid char";
+            listReason[2] = "contains invalid char";
         }
 
         if (!containsDigit(password)) {
-            listReason[2] = "should contain a number";
+            listReason[3] = "should contain a number";
         }
 
         if (!containsUpperAndLower(password)) {
-            listReason[3] = "should contain upper and lower letter";
+            listReason[4] = "should contain upper and lower letter";
         }
 
         if (isCommonPassword(password)) {
-            listReason[4] = "is common";
+            listReason[5] = "is common";
         }
 
         if (!containsSpecialChar(password)) {
-            listReason[5] = "should contain a special char";
+            listReason[6] = "should contain a special char";
         }
 
         if (!containsMaxThreeSpecialChar(password)) {
-            listReason[6] = "should contain max. three special characters";
+            listReason[7] = "should contain max. three special characters";
         }
 
         return listReason;
